@@ -1,0 +1,202 @@
+@charset "utf-8";
+
+/* common*/
+
+body{
+  margin: 0;
+}
+img{
+  vertical-align: bottom;
+}
+.btn{
+  background-color: green;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+h2{
+  margin: 0;
+  font-weight: normal;
+  text-align: center;
+}
+
+h3{
+  margin: 0;
+  font-weight: normal;
+}
+
+p{
+  margin: 0;
+}
+
+.container{
+  margin: 0 auto;
+  width: calc(100% - 32px);
+  box-sizing: border-box;
+}
+
+/* header*/
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.add{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+}
+
+h1{
+  margin: 0;
+  font-size: 0;
+}
+
+.logo-pc{
+  display: none;
+}
+
+/* hero */
+
+.hero{
+  background-color: lightblue;
+  background-image: url(bg.png);
+  background-repeat: repeat-X;
+  background-position: center bottom;
+  text-align: center;
+  padding-top: 64px;
+}
+.hero img{
+  margin-top: 64px;
+}
+.hero btn{
+  margin-top: 64px;
+}
+
+/* features*/
+
+.features{
+  padding: 64px 0 ;
+}
+
+.feature{
+  margin-top: 64px;
+}
+
+.pic{
+  text-align: center;
+}
+
+.feature h3{
+  margin-top: 16px;
+}
+
+.feature p{
+  margin-top: 16px;
+}
+
+/* footer*/
+
+footer{
+  background-color: #333;
+  color: white;
+  padding: 64px 0;
+  text-align: center;
+}
+
+small{
+  font-size: 14px;
+}
+
+
+/* large screen */
+
+@media (min-width: 600px){
+  
+  /* header*/
+
+  .logo-sp {
+    display: none;
+  }
+
+  .logo-pc{
+    display: inline;
+  }
+
+  /* hero */
+
+  .hero .container{
+    display: flex;
+    align-items: center;
+  }
+
+  .hero div{
+    flex: 1;
+  }
+
+  .hero img{
+    margin-top: 0;
+  }
+
+  /*features*/
+
+  .feature{
+    display: flex;
+    gap: 32px;
+    opacity: 0;
+    transition: opacity .3s,transform .5s;
+  }
+
+  .pic{
+    width: 300px;
+  }
+
+  .desc{
+    flex: 1;
+  }
+
+  .reversed{
+    flex-direction: row-reverse;
+  }
+}
+
+/* add */
+.feature.sl{
+   transform: translateX(-400px);
+}
+
+.feature.sr{
+  transform: translateX(400px);
+}
+
+.feature.appear{
+  opacity: 1;
+  transform: none;
+}
+
+header.scrolled{
+  background-color: white;
+}
+
+#to_top{
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  opacity: 0;
+}
+
+#to_top i{
+   font-size: 32px;
+   color: aqua;
+}
+
+#to_top.scrolled{
+  opacity: 1;
+}
